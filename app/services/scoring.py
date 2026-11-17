@@ -1,4 +1,3 @@
-# app/services/scoring.py
 
 """Scoring rules for BuddyQuest.
 
@@ -15,11 +14,7 @@ DAILY_COMPLETION_BONUS = 20
 HELP_FRIEND_POINTS = 5
 CHEER_POINTS = 1
 
-def help_friend_points(task_completed: bool) -> int:
-    """Award points when a friend helps complete a task."""
-    if task_completed:
-        return HELP_FRIEND_POINTS
-    return 0# A user can cheer friends at most five times per day.
+# A user can cheer friends at most five times per day.
 DAILY_CHEER_LIMIT = 5
 
 
@@ -65,8 +60,11 @@ def cheer_points(cheers_today: int) -> int:
         return CHEER_POINTS
 
     return 0
+
+
 def help_friend_points(task_completed: bool) -> int:
     """Award points when a friend helps complete a task."""
     if task_completed:
         return HELP_FRIEND_POINTS
+
     return 0
